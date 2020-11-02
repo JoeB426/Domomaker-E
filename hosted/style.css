@@ -274,3 +274,11 @@ h3.domoAge {
 .domo:last-child {
     margin-bottom:10px;
 }
+
+/* New About Page */
+#aboutForm {
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1000px;
+    line-height: 1.6;
+}

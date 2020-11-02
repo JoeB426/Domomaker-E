@@ -107,6 +107,16 @@ var SignupWindow = function SignupWindow(props) {
     type: "submit",
     value: "Sign Up"
   }));
+}; //New About Page
+
+
+var AboutWindow = function AboutWindow(props) {
+  return /*#__PURE__*/React.createElement("form", {
+    id: "aboutForm",
+    name: "aboutForm",
+    method: "POST",
+    className: "mainForm"
+  }, /*#__PURE__*/React.createElement("p", null, "Welcome to the about page! Within this app you are able to create a personal account with a username and password. You are able to login to said account as well. When you login you will be brought to a maker page where you can add domo user profiles. Within these domo user profiles you can add a name, eye color, as well as an age. Don't forget to fill out the inputs for each section! Have fun!"));
 };
 
 var createLoginWindow = function createLoginWindow(csrf) {
@@ -119,11 +129,20 @@ var createSignupWindow = function createSignupWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(SignupWindow, {
     csrf: csrf
   }), document.querySelector("#content"));
+}; //New About Page
+
+
+var createAboutWindow = function createAboutWindow(csrf) {
+  ReactDOM.render( /*#__PURE__*/React.createElement(AboutWindow, {
+    csrf: csrf
+  }), document.querySelector("#content"));
 };
 
 var setup = function setup(csrf) {
   var loginButton = document.querySelector("#loginbutton");
-  var signupButton = document.querySelector("#signupButton");
+  var signupButton = document.querySelector("#signupButton"); //New About Page
+
+  var aboutButton = document.querySelector("#aboutButton");
   signupButton.addEventListener("click", function (e) {
     e.preventDefault();
     createSignupWindow(csrf);
@@ -132,6 +151,12 @@ var setup = function setup(csrf) {
   loginButton.addEventListener("click", function (e) {
     e.preventDefault();
     createLoginWindow(csrf);
+    return false;
+  }); //New About Page
+
+  aboutButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    createAboutWindow(csrf);
     return false;
   });
   createLoginWindow(csrf);
