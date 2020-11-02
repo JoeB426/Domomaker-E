@@ -6,7 +6,7 @@ var handleDomo = function handleDomo(e) {
     width: 'hide'
   }, 350);
 
-  if ($("#domoName").val() == '' || $("#domoAge").val() == '') {
+  if ($("#domoName").val() == '' || $("#domoEye").val() == '' || $("#domoAge").val() == '') {
     handleError("All fields are required");
     return false;
   }
@@ -32,6 +32,13 @@ var DomoForm = function DomoForm(props) {
     type: "text",
     name: "name",
     placeholder: "Domo Name"
+  }), /*#__PURE__*/React.createElement("label", {
+    htmlFor: "eye"
+  }, "Eye Color: "), /*#__PURE__*/React.createElement("input", {
+    id: "domoEye",
+    type: "text",
+    name: "eye",
+    placeholder: "Domo Eye Color"
   }), /*#__PURE__*/React.createElement("label", {
     htmlFor: "age"
   }, "Age: "), /*#__PURE__*/React.createElement("input", {
@@ -70,6 +77,8 @@ var DomoList = function DomoList(props) {
     }), /*#__PURE__*/React.createElement("h3", {
       className: "domoName"
     }, " Name: ", domo.name, " "), /*#__PURE__*/React.createElement("h3", {
+      className: "domoEye"
+    }, " Eye Color: ", domo.eye, " "), /*#__PURE__*/React.createElement("h3", {
       className: "domoAge"
     }, " Age: ", domo.age, " "));
   });

@@ -49,8 +49,9 @@ nav:nth-child(1) {
 
 .domoForm {
     border: 2px solid #338acc;
-    height: 35px;
-    width: 700px;
+    height: 45px;
+    /* changed the width to accommodate for the eye color */
+    width: 1000px;
     margin-top:0px;
     padding-top:10px;
     background-color: #55acee;
@@ -191,7 +192,7 @@ nav:nth-child(1) {
 
 #domos {
     width: 40%;
-    min-width: 400px;
+    min-width: 800px;
     border: 2px solid #55acee;
     border-radius: 4px;
     margin: 0 auto;
@@ -242,6 +243,19 @@ h3.domoName {
     font-weight: bold;
     padding-left: 65px;
     font-size: 1.5em;
+}
+
+h3.domoEye {
+    
+    /* padding-left: 265px; */
+    margin-top: 24px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 200px;
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
 }
 
 h3.domoAge {

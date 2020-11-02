@@ -8,12 +8,23 @@ let DomoModel = {};
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
+// new for eyecolor
+const setEye = (eye) => _.escape(eye).trim();
+
 const DomoSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     trim: true,
     set: setName,
+  },
+
+  // new for eyecolor
+  eye: {
+    type: String,
+    require: true,
+    trim: true,
+    set: setEye,
   },
 
   age: {
@@ -36,6 +47,8 @@ const DomoSchema = new mongoose.Schema({
 
 DomoSchema.statics.toAPI = (doc) => ({
   name: doc.name,
+  // new for eyecolor
+  eye: doc.eye,
   age: doc.age,
 });
 
@@ -44,7 +57,7 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  return DomoModel.find(search).select('name age').lean().exec(callback);
+  return DomoModel.find(search).select('name eye age').lean().exec(callback);
 };
 
 DomoModel = mongoose.model('Domo', DomoSchema);
